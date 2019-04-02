@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+    <g fill="lightseagreen">
+        <rect id="line" x="70" width="60" height="100%" />
+        <use href="#line" transform="rotate(90, 100, 100)" />
+    </g>
+</svg>

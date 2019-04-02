@@ -1,0 +1,9 @@
+<div class="message-box message-list" *ngIf="msg.messages">
+  <div class="message message-{{ m.type }}" *ngFor="let m of msg.messages">
+    <div class="message__icon"></div>
+    <div class="message__content">
+      {{ m.content }}
+    </div>
+    <button class="message__close" (click)="msg.close(m.id)">[X]</button>
+  </div>
+</div>

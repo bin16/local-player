@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bulma/css/bulma.css";
+
+body {
+    margin: 0;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.app-header {
+    background: lightseagreen;
+    padding: 1em;
+}
+
+.app-layout {
+    flex: 1;
+}

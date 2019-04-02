@@ -1,0 +1,36 @@
+.progress-bar {
+    height: 16px;
+    margin: .5em 1em;
+    border-radius: 8px;
+    background: snow;
+    opacity: .85;
+    cursor: pointer;
+}
+
+.progress-bar:hover {
+    opacity: 1;
+}
+
+.progress-bar-active {
+    position: relative;
+    height: 100%;
+    width: 0;
+    border-radius: 8px;
+    background: lightseagreen;
+}
+
+.progress-bar--with-mark .progress-bar-active::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    left: 100%;
+    border: 4px solid lightseagreen;
+    border-radius: 100%;
+    background: snow;
+    box-shadow: 1px 1px 3px black;
+    transform: translate(-50%, -50%);
+
+    cursor: wait;
+}

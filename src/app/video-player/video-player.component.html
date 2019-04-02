@@ -1,0 +1,78 @@
+<div class="ply g-ply">
+  <main class="ply-content col">
+    <div class="ply-screen row row--fill">
+      <canvas class="ply-content__canvas" width="1920" height="1080"></canvas>
+    </div>
+    <div class="ply-controls row">
+      <div class="col">
+        <button
+          (click)="video.toggle()"
+          class="btn"
+          [ngClass]="{ 'btn__play': paused, 'btn__pause': !paused }"></button>
+      </div>
+      <div class="col">
+        <button (click)="video.forward()" class="btn btn__forward"></button>
+      </div>
+      <div class="col col--fill">
+        <app-progress-bar (updated)="setCurrentTime($event)" max="{{ duratation }}" value="{{ currentTime }}"></app-progress-bar>
+      </div>
+      <div class="col">
+        <button (click)="toggleFullscreen()" class="btn btn__fullscreen"></button>
+      </div>
+    </div>
+  </main>
+  <aside class="ply-playlist">
+    <div class="menu">
+      <div class="menu-item">
+        <h4>Playlist</h4>
+      </div>
+      <div *ngFor="let media of video.mediaList; let i = index" class="menu-item">
+        <div class="row">
+          <div class="col col--fill">
+            <p>{{ media.type }} | {{ media.title }}</p>
+          </div>
+          <div class="col">
+            <button (click)="video.removeMedia(i)" class="btn btn__remove"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <section class="ply-filelist">
+    <div class="filelist menu">
+      <a (click)="readPath(upPath)" class="menu-item go-back">.. (back to {{ upPath }})</a>
+      <div *ngFor="let path of paths" class="menu-item row" title="{{ path.title }}">
+        <ng-container *ngIf="path.type == '_'">
+          <div class="col col--fill">
+            <a (click)="readPath(path.path)">{{ path.title }}</a>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="path.type != '_'">
+          <div class="col">
+            <button (click)="pushMedia(path)" class="btn btn__add"></button>
+          </div>
+          <div class="col col--fill">
+            <a (click)="playMedia(path)">{{ path.title }}</a>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </section>
+  <section class="ply-history">
+    <div class="menu">
+      <div class="menu-item">
+          <h4>Historylist</h4>
+        </div>
+        <div *ngFor="let media of video.historyList; let i = index" class="menu-item">
+          <div class="row">
+            <div class="col col--fill">
+              <p>{{ media.type }} | {{ media.title }}</p>
+            </div>
+            <div class="col">
+              <button (click)="video.removeHistory(i)" class="btn btn__remove"></button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+</div>

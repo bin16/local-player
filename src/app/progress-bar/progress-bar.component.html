@@ -1,0 +1,10 @@
+<div
+  #bar
+  (touchmove)="willChange($event.offsetX, bar.offsetWidth)"
+  (click)="willChange($event.offsetX, bar.offsetWidth)"
+  class="progress-bar progress-bar--with-mark">
+  <div
+    [ngStyle]="{ 'width': percent }"
+    class="progress-bar-active">
+  </div>
+</div>

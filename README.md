@@ -1,5 +1,23 @@
 # Ply
 
+A simple html5 video / audio player for local http server.
+
+The http server must response as follows:
+
+```
+[{
+    type: "video/mp4", // "_" for folders
+    path: "absolute-path-to-media-file",
+    title: "file name, for display",
+}]
+```
+
+![](screenshot-web.png)
+
+![](screenshot-fullscreen.png)
+
+------------------
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
 
 ## Development server

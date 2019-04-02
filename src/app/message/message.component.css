@@ -1,0 +1,60 @@
+.message-box {
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 320px;
+    left: 50%;
+    transform: translate(-50%, 20px);
+}
+
+.message {
+    display: flex;
+    margin: .5em;
+    border-radius: 5px;
+    border: 1px solid #a9a9a9;
+}
+
+.message__icon {
+    padding: 1em;
+}
+
+.message__icon::before {
+    content: '😊';
+}
+
+.message__content {
+    flex: 1;
+    padding: 1em;
+}
+
+.message__close {
+    padding: 1em;
+    border: none;
+    border-left: 1px solid #a9a9a9;
+    background: none;
+}
+
+.message + .message {
+    border-top: 1px solid #dddddd;
+}
+
+.message-success {
+    background: #b0dec8;
+}
+
+.message-warning {
+    background: lightgoldenrodyellow;
+}
+
+.message-alert {
+    background: lightpink;
+}
+
+.message-log {
+    background: lightslategrey;
+}
+
+.message-info {
+    background: lightcyan;
+}
